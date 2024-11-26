@@ -1,0 +1,35 @@
+Create MongoDB container
+
+- docker pull mongo
+- docker run --name mongodb-container -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
+
+
+Mongoose
+
+- sort({name: -1}); sort descending
+- sort({name: 1}); sort ascending
+
+? how can sum and group by in Mongoose, also how to add having contidions.
+
+- upsert document: "update" if found, "insert" if not found
+
+? Do Mongoose check required fields when using upsert?
+
+- Model.findOneAndUpdate(query, update, options): find the first document and update, then return the original document before updated.
+We can set option {new: true} to return document after updated
+
+{ _id: 4, grades: [ {total: 80, student: 8}, {total: 85, student: 5}, {total: 85, student: 8} ]}
+await Model.findOne( { _id: 4, "grades.total": 85 }, { _id: 0, "grades.$" : 1 } )
+// { grades: [ {total: 85, student: 5} ]}
+
+? how can return the k element in grades? => set option { _id: 0, "grades.k" : 1 }
+
+// { "_id": 1, "scores": [12, 57, 14, 61, 48, 57] }
+await Model.updateOne({_id: 1}, { $pull: { "scores": 57 } })
+// { "_id": 1, "scores": [12, 14, 61, 48] } 
+
+? Can I find the second element and delete / How can I delete one element in scores?
+{ $pull: { "scores.$": 57 }} => true / false
+
+
+
