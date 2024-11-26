@@ -1,0 +1,10 @@
+{
+  "name": "homework-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "MIU",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@types/node": "^18.19.65"
+  }
+}
