@@ -1,0 +1,21 @@
+{
+  "name": "homework-03-sendtt-1",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/mxQH7ELl) [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=17349860) # CS572-Homework-03-Aggregation Given the two collections `users` and `courses`. And another sub-schemas of `lectureSchema`, `fileSchema`,  and `questionSchema`. ```typescript import { Schema, model, InferSchemaType } from 'mongoose';",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.8.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "dotenv-expand": "^12.0.1",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2"
+  }
+}
