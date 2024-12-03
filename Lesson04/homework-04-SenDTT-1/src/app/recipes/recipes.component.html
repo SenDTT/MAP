@@ -1,0 +1,11 @@
+<app-recipe [$recipe]="currentRecipe()" />
+
+<mat-paginator
+  class="myPaginator"
+  [length]="length()"
+  [pageIndex]="currentIndex()"
+  [pageSize]="1"
+  aria-label="Select page"
+  (page)="onPageChange($event)"
+>
+</mat-paginator>

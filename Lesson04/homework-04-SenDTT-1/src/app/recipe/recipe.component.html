@@ -1,0 +1,29 @@
+@if($recipe()) {
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>
+      @let recipeName = $recipe()?.name || ''; @if (recipeName) {
+      {{ recipeName | slice : 0 : 10 }}{{ recipeName.length > 10 ? "..." : "" }}
+      }
+
+      <mat-chip-set aria-label="Fish selection">
+        <mat-chip *ngFor="let item of $recipe()?.mealType; track: item">{{
+          item
+        }}</mat-chip>
+        <mat-chip *ngFor="let item of $recipe()?.tags; track: item">{{
+          item
+        }}</mat-chip>
+      </mat-chip-set>
+    </mat-card-title>
+  </mat-card-header>
+  @if ($recipe()?.image) {
+  <img
+    class="recipe-image"
+    mat-card-image
+    [src]="$recipe()?.image"
+    [alt]="$recipe()?.name"
+  />
+  }
+  <mat-card-content> </mat-card-content>
+</mat-card>
+}
