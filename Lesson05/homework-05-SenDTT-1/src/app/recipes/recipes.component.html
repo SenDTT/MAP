@@ -1,0 +1,20 @@
+@if(currentRecipes() && currentRecipes().length > 0) {
+<div class="my-recipes">
+  <div
+    class="my-recipe"
+    *ngFor="let recipe of currentRecipes(); track: trackByRecipeId"
+  >
+    <app-recipe [$recipe]="recipe" />
+  </div>
+</div>
+
+<mat-paginator
+  class="myPaginator"
+  [length]="length()"
+  [pageIndex]="currentIndex()"
+  [pageSize]="limit()"
+  aria-label="Select page"
+  (page)="onPageChange($event)"
+>
+</mat-paginator>
+}

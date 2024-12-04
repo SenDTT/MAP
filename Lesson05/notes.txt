@@ -1,0 +1,4 @@
+Dependency Injection: it's like design partern.
+Observable
+signal
+toSignal
