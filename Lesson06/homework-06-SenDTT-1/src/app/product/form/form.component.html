@@ -1,0 +1,63 @@
+<div class="product-form">
+  <h2>{{ isEditMode ? "Edit Product" : "Add Product" }}</h2>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <!-- Title -->
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input id="title" type="text" formControlName="title" />
+      <small
+        *ngIf="
+          productForm.get('title')?.invalid && productForm.get('title')?.touched
+        "
+      >
+        Title is required.
+      </small>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description"></textarea>
+      <small
+        *ngIf="
+          productForm.get('description')?.invalid &&
+          productForm.get('description')?.touched
+        "
+      >
+        Description is required.
+      </small>
+    </div>
+
+    <!-- Price -->
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input id="price" type="number" formControlName="price" />
+      <small
+        *ngIf="
+          productForm.get('price')?.invalid && productForm.get('price')?.touched
+        "
+      >
+        Price is required and must be a positive number.
+      </small>
+    </div>
+
+    <!-- Category -->
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input id="category" type="text" formControlName="category" />
+      <small
+        *ngIf="
+          productForm.get('category')?.invalid &&
+          productForm.get('category')?.touched
+        "
+      >
+        Category is required.
+      </small>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="productForm.invalid">
+      {{ isEditMode ? "Update Product" : "Add Product" }}
+    </button>
+  </form>
+</div>

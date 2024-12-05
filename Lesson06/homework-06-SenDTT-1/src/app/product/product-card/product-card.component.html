@@ -1,0 +1,35 @@
+@if($product) {
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>
+      <a
+        [routerLink]="['/products', $product?.id]"
+        routerLinkActive="router-link-active"
+        >@if (recipeName) { {{ recipeName | slice : 0 : 20
+        }}{{ recipeName.length > 20 ? "..." : "" }} }</a
+      >
+
+      <div class="product-price">{{ $product.price | currency }}</div>
+
+      <mat-chip-set aria-label="Fish selection">
+        <mat-chip
+          *ngFor="let item of $product?.tags; track: $product?.id + item"
+          >{{ item }}</mat-chip
+        >
+        <mat-chip>{{ $product?.category }}</mat-chip>
+      </mat-chip-set>
+    </mat-card-title>
+  </mat-card-header>
+  @if (productImage) {
+  <div class="recipe-image-box">
+    <img
+      class="recipe-image"
+      mat-card-image
+      [src]="productImage"
+      [alt]="recipeName"
+    />
+  </div>
+  }
+  <mat-card-content> </mat-card-content>
+</mat-card>
+}

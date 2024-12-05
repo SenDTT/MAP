@@ -1,0 +1,26 @@
+<div style="display: flex; justify-content: space-between; flex-direction: row">
+  <h1>{{ title }}</h1>
+  <a [routerLink]="['add']" routerLinkActive="router-link-active"
+    >Add New Product</a
+  >
+</div>
+@if(productList) {
+<div class="my-recipes">
+  <div class="my-recipe">
+    <app-product-card
+      *ngFor="let product of productList; track: trackByProductId"
+      [$product]="product"
+    />
+  </div>
+</div>
+
+<mat-paginator
+  class="myPaginator"
+  [length]="total"
+  [pageIndex]="$page() - 1"
+  [pageSize]="$limit()"
+  aria-label="Select page"
+  (page)="onPageChange($event)"
+>
+</mat-paginator>
+}

@@ -1,0 +1,13 @@
+.my-recipes .my-recipe {
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+.my-recipes .mat-grid-tile-content {
+    width: 100%;
+}

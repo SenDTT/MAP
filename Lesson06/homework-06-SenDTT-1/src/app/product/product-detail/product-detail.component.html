@@ -1,0 +1,56 @@
+@if(product) {
+<div class="product-detail">
+  <div class="product-header">
+    <img
+      [src]="product?.thumbnail"
+      alt="{{ product?.title }}"
+      class="product-thumbnail"
+    />
+    <h1>{{ product?.title }}</h1>
+    <h2>{{ product?.brand }}</h2>
+  </div>
+  <div
+    style="
+      font-weight: 500;
+      padding: 1em 0;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 1em;
+      align-items: center;
+    "
+  >
+    <a [routerLink]="['edit']" routerLinkActive="router-link-active"
+      >Update Product</a
+    >
+    <button
+      style="
+        background-color: rgb(75, 75, 250);
+        color: white;
+        outline: none;
+        border: 0;
+        padding: 0.75em;
+        border-radius: 0.5em;
+        font-weight: bold;
+        cursor: pointer;
+      "
+      (click)="onDeleteProduct(product?.id)"
+    >
+      Delete Product
+    </button>
+  </div>
+  <div class="product-info">
+    <p><strong>Category:</strong> {{ product?.category }}</p>
+    <p><strong>Price:</strong> ${{ product?.price }}</p>
+    <p><strong>Discount:</strong> {{ product?.discountPercentage }}%</p>
+    <p><strong>Stock:</strong> {{ product?.stock }}</p>
+    <p><strong>SKU:</strong> {{ product?.sku }}</p>
+  </div>
+
+  <div class="product-description">
+    <h3>Description</h3>
+    <p>{{ product?.description }}</p>
+  </div>
+</div>
+
+}

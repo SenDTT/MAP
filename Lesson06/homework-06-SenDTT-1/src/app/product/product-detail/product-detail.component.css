@@ -1,0 +1,46 @@
+.product-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.product-header {
+    text-align: center;
+}
+
+.product-thumbnail {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-info,
+.product-description,
+.product-dimensions,
+.product-meta,
+.product-reviews,
+.product-shipping,
+.product-return-policy {
+    margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.product-reviews ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-reviews li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
