@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product, ProductList } from './product.type';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  #url = 'https://dummyjson.com/';
-  #endpoint = 'products';
-  apiUrl = 'https://dummyjson.com/products';
+  apiUrl = environment.apiUrl + 'products';
   constructor(private httpClient: HttpClient) {}
 
   getAllProducts(params: any) {
