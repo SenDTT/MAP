@@ -1,0 +1,23 @@
+<div style="padding: 0.5em 0">
+  <a
+    style="
+      padding: 0.5em;
+      background-color: rgb(9, 138, 48);
+      color: white;
+      border-color: rgb(9, 138, 48);
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    "
+    [routerLink]="['/diaries', 'add']"
+    >Add new</a
+  >
+</div>
+
+<ul>
+  <li *ngFor="let diary of diaries">
+    <h3>{{ diary.title }}</h3>
+    <p>{{ diary.description | slice : 0 : 50 }}...</p>
+    <a [routerLink]="['/diaries', diary.id]">View Details</a>
+  </li>
+</ul>

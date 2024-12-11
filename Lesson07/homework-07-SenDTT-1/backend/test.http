@@ -1,0 +1,33 @@
+HEAD http://localhost:3000/
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "admin@example.com",
+    "password": "12345678"
+}
+###
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "email": "admin@example.com",
+    "fullname": "admin",
+    "password": "12345678"
+}
+
+###
+POST http://localhost:3000/diary
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTI1OWMwY2ZhMjI4ZmEwZDcwNWVmZSIsImlhdCI6MTczMzQ5MjU1NiwiZXhwIjoxNzMzNTc4OTU2fQ.eeLDbjiWzKTFiegU93kpZWSJLiC5SW2GEbsA02P8uDI
+
+{
+    "title": "Today Story",
+    "description": "A happy day."
+}
+###
+GET http://localhost:3000/diary/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTI1OWMwY2ZhMjI4ZmEwZDcwNWVmZSIsImlhdCI6MTczMzQ5MjU1NiwiZXhwIjoxNzMzNTc4OTU2fQ.eeLDbjiWzKTFiegU93kpZWSJLiC5SW2GEbsA02P8uDI

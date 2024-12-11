@@ -1,0 +1,6 @@
+<form (ngSubmit)="saveDiary()">
+  <input type="text" [(ngModel)]="title" name="title" placeholder="Title" required />
+  <textarea [(ngModel)]="description" name="description" placeholder="Description"></textarea>
+  <textarea [(ngModel)]="content" name="content" placeholder="Content"></textarea>
+  <button type="submit">Save</button>
+</form>

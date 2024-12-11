@@ -1,0 +1,46 @@
+POST http://localhost:3000/proofread
+Content-Type: application/json
+
+{
+    "text": "flowers"
+}
+
+###
+POST http://localhost:3000/make-friendly
+Content-Type: application/json
+
+{
+    "text": "Hi, How is it going?"
+}
+
+###
+POST http://localhost:3000/make-professional
+Content-Type: application/json
+
+{
+    "text": "In 2017, Congress directed the department to hold two regional sales before the end of 2024. During Trump’s first term, the administration lease sale resulted in nine leases being issued, with only two oil companies placing bids. The Biden administration reviewed and suspended all nine sales in 2021"
+}
+
+###
+POST http://localhost:3000/summarize
+Content-Type: application/json
+
+{
+    "text": "In 2017, Congress directed the department to hold two regional sales before the end of 2024. During Trump’s first term, the administration lease sale resulted in nine leases being issued, with only two oil companies placing bids. The Biden administration reviewed and suspended all nine sales in 2021"
+}
+
+###
+POST http://localhost:3000/extract-key-points
+Content-Type: application/json
+
+{
+    "text": "In 2017, Congress directed the department to hold two regional sales before the end of 2024. During Trump’s first term, the administration lease sale resulted in nine leases being issued, with only two oil companies placing bids. The Biden administration reviewed and suspended all nine sales in 2021"
+}
+
+###
+POST http://localhost:3000/get-weather
+Content-Type: application/json
+
+{
+    "location": "London"
+}
